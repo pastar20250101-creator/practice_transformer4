@@ -1,0 +1,13 @@
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.docx_render/
+lab1_korean_movie_review_analysis/tests/
+lab2_seq2seq_translation_modeling/
+lab9_image_captioning/
+transformer4_assignment_guide.docx
+.DS_Store
+Thumbs.db
