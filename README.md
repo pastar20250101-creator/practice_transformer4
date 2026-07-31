@@ -73,3 +73,23 @@ Use `.env.example` as the template:
 ```text
 UNSPLASH_API_KEY=your_unsplash_access_key_here
 ```
+
+## Streamlit Deployment
+
+This repository includes a lightweight Streamlit app for Lab 6 and Lab 9.
+
+Entrypoint:
+
+```text
+streamlit_app.py
+```
+
+Streamlit Community Cloud settings:
+
+```text
+Repository: pastar20250101-creator/practice_transformer4
+Branch: main
+Main file path: streamlit_app.py
+```
+
+The deployed app is intentionally lightweight. It uses the local image assets and explains the model flow without downloading heavy CLIP or BLIP model weights during startup.
