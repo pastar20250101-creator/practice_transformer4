@@ -1,0 +1,1 @@
+lab9_image_captioning/korean_image_captioning_dataset/MSCOCO_train_val_Korean.json filter=lfs diff=lfs merge=lfs -text
