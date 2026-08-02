@@ -7,7 +7,7 @@ __pycache__/
 .docx_render/
 docs/superpowers/
 lab1_korean_movie_review_analysis/tests/
-lab2_seq2seq_translation_modeling/
+lab2_seq2seq_translation_modeling/tests/
 transformer4_assignment_guide.docx
 ~$*.docx
 .DS_Store

@@ -1,5 +1,6 @@
 from pathlib import Path
 from io import BytesIO
+import subprocess
 import unittest
 
 from PIL import Image
@@ -105,6 +106,15 @@ class AppUtilsTest(unittest.TestCase):
         self.assertIn("Test", translation_input_text())
         self.assertIn("fruit", translation_output_text())
         self.assertTrue(all(pair.korean and pair.english for pair in pairs))
+
+    def test_lab2_translation_data_is_not_ignored_for_cloud_deploy(self):
+        result = subprocess.run(
+            ["git", "check-ignore", "-q", "lab2_seq2seq_translation_modeling/data/train_kor.txt"],
+            cwd=ROOT,
+            check=False,
+        )
+
+        self.assertNotEqual(result.returncode, 0)
 
     def test_lab6_profiles_use_the_twelve_notebook_images(self):
         profiles = fashion_profiles()
