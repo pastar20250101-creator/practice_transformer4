@@ -11,6 +11,7 @@ from app_utils import (
     analyze_movie_reviews,
     caption_uploaded_image,
     fashion_profiles,
+    lab1_artifacts,
     load_caption_records,
     load_token_records,
     load_translation_pairs,
@@ -181,6 +182,11 @@ def cached_token_frame(limit: int = 20) -> pd.DataFrame:
 
 
 @st.cache_data(show_spinner=False)
+def cached_lab1_wordcloud_artifacts():
+    return [artifact for artifact in lab1_artifacts() if "WordCloud" in artifact.title]
+
+
+@st.cache_data(show_spinner=False)
 def cached_translation_pairs(limit: int = 300):
     return load_translation_pairs(limit=limit)
 
@@ -271,6 +277,12 @@ def render_lab1() -> None:
     st.markdown("#### 학습 코퍼스 키워드")
     corpus_frame = cached_token_frame(limit=20)
     st.bar_chart(corpus_frame.set_index("키워드")["빈도"])
+
+    st.markdown("#### 단어 그래프 / WordCloud")
+    artifact_cols = st.columns(2)
+    for index, artifact in enumerate(cached_lab1_wordcloud_artifacts()):
+        with artifact_cols[index % 2]:
+            st.image(asset_path(artifact.path), width="stretch")
 
 
 def render_lab2() -> None:

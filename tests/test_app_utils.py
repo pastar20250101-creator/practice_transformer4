@@ -59,6 +59,13 @@ class AppUtilsTest(unittest.TestCase):
         self.assertNotIn("render_overview", source)
         self.assertNotIn("render_sidebar", source)
 
+    def test_streamlit_lab1_renders_saved_wordcloud_artifacts(self):
+        source = (ROOT / "streamlit_app.py").read_text(encoding="utf-8")
+
+        self.assertIn("lab1_artifacts", source)
+        self.assertIn("단어 그래프", source)
+        self.assertIn("WordCloud", source)
+
     def test_movie_review_analyzer_returns_sentiment_and_keywords(self):
         result = analyze_movie_reviews("연기가 좋고 스토리가 최고였다. 감동적인 영화였다.")
 
