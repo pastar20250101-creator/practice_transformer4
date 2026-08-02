@@ -5,8 +5,10 @@ __pycache__/
 .env.*
 !.env.example
 .docx_render/
+docs/superpowers/
 lab1_korean_movie_review_analysis/tests/
 lab2_seq2seq_translation_modeling/
 transformer4_assignment_guide.docx
+~$*.docx
 .DS_Store
 Thumbs.db
